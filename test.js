@@ -6,6 +6,11 @@ function Foo(x) {
 	this.x = 1;
 }
 
+function ObjectConstructor() {
+}
+
+ObjectConstructor.prototype.constructor = Object;
+
 test(function (t) {
 	t.assert(fn({}));
 	t.assert(fn({foo: true}));
@@ -26,5 +31,9 @@ test(function (t) {
 	t.assert(!fn(''));
 	t.assert(!fn(0));
 	t.assert(!fn(false));
+	t.assert(!fn(new ObjectConstructor()));
+	var foo = new Foo();
+	foo.constructor = Object;
+	t.assert(!fn(foo));
 	t.end();
 });
