@@ -1,36 +1,40 @@
 import test from 'ava';
-import m from './';
+import isPlainObject from '.';
 
 function Foo(x) {
-	this.x = 1;
+	this.x = x;
 }
 
 function ObjectConstructor() {}
 
 ObjectConstructor.prototype.constructor = Object;
 
-test(t => {
-	t.true(m({}));
-	t.true(m({foo: true}));
-	t.true(m({constructor: Foo}));
-	t.true(m({valueOf: 0}));
-	t.true(m(Object.create(null)));
-	t.true(m(new Object()));
-	t.false(m(arguments));
-	t.false(m(['foo', 'bar']));
-	t.false(m(new Foo(1)));
-	t.false(m(Math));
-	t.false(m(Error));
-	t.false(m(() => {}));
-	t.false(m(/./));
-	t.false(m(null));
-	t.false(m(undefined));
-	t.false(m(NaN));
-	t.false(m(''));
-	t.false(m(0));
-	t.false(m(false));
-	t.false(m(new ObjectConstructor()));
+test('main', t => {
+	t.true(isPlainObject({}));
+	t.true(isPlainObject({foo: true}));
+	t.true(isPlainObject({constructor: Foo}));
+	t.true(isPlainObject({valueOf: 0}));
+	t.true(isPlainObject(Object.create(null)));
+	t.true(isPlainObject(new Object())); // eslint-disable-line no-new-object
+	t.false(isPlainObject(['foo', 'bar']));
+	t.false(isPlainObject(new Foo(1)));
+	t.false(isPlainObject(Math));
+	t.false(isPlainObject(Error));
+	t.false(isPlainObject(() => {}));
+	t.false(isPlainObject(/./));
+	t.false(isPlainObject(null));
+	t.false(isPlainObject(undefined));
+	t.false(isPlainObject(NaN));
+	t.false(isPlainObject(''));
+	t.false(isPlainObject(0));
+	t.false(isPlainObject(false));
+	t.false(isPlainObject(new ObjectConstructor()));
+
+	(function () {
+		t.false(isPlainObject(arguments)); // eslint-disable-line prefer-rest-params
+	})();
+
 	const foo = new Foo();
 	foo.constructor = Object;
-	t.false(m(foo));
+	t.false(isPlainObject(foo));
 });

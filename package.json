@@ -1,36 +1,37 @@
 {
-  "name": "is-plain-obj",
-  "version": "1.1.0",
-  "description": "Check if a value is a plain object",
-  "license": "MIT",
-  "repository": "sindresorhus/is-plain-obj",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "obj",
-    "object",
-    "is",
-    "check",
-    "test",
-    "type",
-    "plain",
-    "vanilla",
-    "pure",
-    "simple"
-  ],
-  "devDependencies": {
-    "ava": "*"
-  }
+	"name": "is-plain-obj",
+	"version": "1.1.0",
+	"description": "Check if a value is a plain object",
+	"license": "MIT",
+	"repository": "sindresorhus/is-plain-obj",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"obj",
+		"object",
+		"is",
+		"check",
+		"test",
+		"type",
+		"plain",
+		"vanilla",
+		"pure",
+		"simple"
+	],
+	"devDependencies": {
+		"ava": "^1.0.1",
+		"xo": "^0.23.0"
+	}
 }
