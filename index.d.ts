@@ -24,6 +24,6 @@ isPlainObject(new Unicorn());
 //=> false
 ```
 */
-declare function isPlainObj(candidate: unknown): candidate is object;
+declare function isPlainObj(value: unknown): value is object;
 
 export = isPlainObj;

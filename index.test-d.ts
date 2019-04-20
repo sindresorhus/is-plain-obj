@@ -1,8 +1,8 @@
 import {expectType} from 'tsd';
-import isPlainObj = require('.');
+import isPlainObject = require('.');
 
 const foo = 'foo';
 
-if (isPlainObj(foo)) {
+if (isPlainObject(foo)) {
 	expectType<object>(foo);
 }

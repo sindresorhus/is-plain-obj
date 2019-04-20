@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = candidate => {
-	if (Object.prototype.toString.call(candidate) !== '[object Object]') {
+module.exports = value => {
+	if (Object.prototype.toString.call(value) !== '[object Object]') {
 		return false;
 	}
 
-	const prototype = Object.getPrototypeOf(candidate);
+	const prototype = Object.getPrototypeOf(value);
 	return prototype === null || prototype === Object.getPrototypeOf({});
 };
