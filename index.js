@@ -1,10 +1,8 @@
 'use strict';
+const {prototype, getPrototypeOf} = Object;
+const {toString} = prototype;
+const prototypes = new Set([null, prototype]);
 
-module.exports = value => {
-	if (Object.prototype.toString.call(value) !== '[object Object]') {
-		return false;
-	}
-
-	const prototype = Object.getPrototypeOf(value);
-	return prototype === null || prototype === Object.getPrototypeOf({});
-};
+module.exports = value =>
+	toString.call(value) === '[object Object]' &&
+	prototypes.has(getPrototypeOf(value));
