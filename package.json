@@ -1,6 +1,6 @@
 {
 	"name": "is-plain-obj",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Check if a value is a plain object",
 	"license": "MIT",
 	"repository": "sindresorhus/is-plain-obj",
