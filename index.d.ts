@@ -24,6 +24,6 @@ isPlainObject(new Unicorn());
 //=> false
 ```
 */
-declare function isPlainObj(value: unknown): Record<string | number | symbol, unknown>;
+declare function isPlainObj<Value = unknown>(value: unknown): value is Record<string | number | symbol, Value>;
 
 export = isPlainObj;

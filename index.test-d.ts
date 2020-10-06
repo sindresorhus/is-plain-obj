@@ -1,8 +1,8 @@
 import {expectType} from 'tsd';
 import isPlainObject = require('.');
 
-const foo = {foo: 'bar'};
+const foo = 'foo';
 
 if (isPlainObject(foo)) {
-	expectType<Record<string | number | symbol, unknown>>(foo);
+	expectType<object>(foo);
 }
