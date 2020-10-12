@@ -1,16 +1,14 @@
-# is-plain-obj [![Build Status](https://travis-ci.org/sindresorhus/is-plain-obj.svg?branch=master)](https://travis-ci.org/sindresorhus/is-plain-obj)
+# is-plain-obj [![Build Status](https://travis-ci.com/sindresorhus/is-plain-obj.svg?branch=master)](https://travis-ci.com/github/sindresorhus/is-plain-obj)
 
 > Check if a value is a plain object
 
 An object is plain if it's created by either `{}`, `new Object()`, or `Object.create(null)`.
-
 
 ## Install
 
 ```
 $ npm install is-plain-obj
 ```
-
 
 ## Usage
 
@@ -33,7 +31,6 @@ class Unicorn {}
 isPlainObject(new Unicorn());
 //=> false
 ```
-
 
 ## Related
 

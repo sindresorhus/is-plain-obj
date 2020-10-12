@@ -24,7 +24,7 @@ test('main', t => {
 	t.false(isPlainObject(/./));
 	t.false(isPlainObject(null));
 	t.false(isPlainObject(undefined));
-	t.false(isPlainObject(NaN));
+	t.false(isPlainObject(Number.NaN));
 	t.false(isPlainObject(''));
 	t.false(isPlainObject(0));
 	t.false(isPlainObject(false));
