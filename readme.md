@@ -1,4 +1,4 @@
-# is-plain-obj [![Build Status](https://travis-ci.com/sindresorhus/is-plain-obj.svg?branch=master)](https://travis-ci.com/github/sindresorhus/is-plain-obj)
+# is-plain-obj
 
 > Check if a value is a plain object
 
@@ -36,7 +36,6 @@ isPlainObject(new Unicorn());
 
 - [is-obj](https://github.com/sindresorhus/is-obj) - Check if a value is an object
 - [is](https://github.com/sindresorhus/is) - Type check values
-
 
 ---
 
