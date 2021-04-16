@@ -1,5 +1,5 @@
 import test from 'ava';
-import isPlainObject from '.';
+import isPlainObject from './index.js';
 
 function Foo(x) {
 	this.x = x;

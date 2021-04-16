@@ -13,7 +13,7 @@ $ npm install is-plain-obj
 ## Usage
 
 ```js
-const isPlainObject = require('is-plain-obj');
+import isPlainObject from 'is-plain-obj';
 
 isPlainObject({foo: 'bar'});
 //=> true

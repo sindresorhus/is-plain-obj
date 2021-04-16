@@ -1,5 +1,5 @@
 import {expectAssignable} from 'tsd';
-import isPlainObject = require('.');
+import isPlainObject from './index.js';
 
 const foo = 'foo';
 
