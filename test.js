@@ -19,6 +19,8 @@ test('main', t => {
 	t.false(isPlainObject(['foo', 'bar']));
 	t.false(isPlainObject(new Foo(1)));
 	t.false(isPlainObject(Math));
+	t.false(isPlainObject(JSON));
+	t.false(isPlainObject(Atomics));
 	t.false(isPlainObject(Error));
 	t.false(isPlainObject(() => {}));
 	t.false(isPlainObject(/./));
