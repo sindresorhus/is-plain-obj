@@ -14,6 +14,7 @@ $ npm install is-plain-obj
 
 ```js
 import isPlainObject from 'is-plain-obj';
+import {runInNewContext} from 'vm';
 
 isPlainObject({foo: 'bar'});
 //=> true
@@ -22,6 +23,10 @@ isPlainObject(new Object());
 //=> true
 
 isPlainObject(Object.create(null));
+//=> true
+
+// This works across realms
+isPlainObject(runInNewContext('({})'));
 //=> true
 
 isPlainObject([1, 2, 3]);

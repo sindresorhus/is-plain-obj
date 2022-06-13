@@ -1,5 +1,6 @@
 import test from 'ava';
 import isPlainObject from './index.js';
+import {runInNewContext} from 'vm';
 
 function Foo(x) {
 	this.x = x;
@@ -16,6 +17,7 @@ test('main', t => {
 	t.true(isPlainObject({valueOf: 0}));
 	t.true(isPlainObject(Object.create(null)));
 	t.true(isPlainObject(new Object())); // eslint-disable-line no-new-object
+	t.true(isPlainObject(runInNewContext('({})')));
 	t.false(isPlainObject(['foo', 'bar']));
 	t.false(isPlainObject(new Foo(1)));
 	t.false(isPlainObject(Math));
