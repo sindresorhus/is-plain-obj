@@ -35,6 +35,9 @@ isPlainObject([1, 2, 3]);
 class Unicorn {}
 isPlainObject(new Unicorn());
 //=> false
+
+isPlainObject(Math);
+//=> false
 ```
 
 ## Related

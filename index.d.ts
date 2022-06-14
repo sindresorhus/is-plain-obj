@@ -27,6 +27,9 @@ isPlainObject([1, 2, 3]);
 class Unicorn {}
 isPlainObject(new Unicorn());
 //=> false
+
+isPlainObject(Math);
+//=> false
 ```
 */
 export default function isPlainObject<Value>(value: unknown): value is Record<PropertyKey, Value>;
