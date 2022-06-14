@@ -1,4 +1,5 @@
 import {inspect} from 'node:util';
+import {runInNewContext} from 'node:vm';
 import isPlainObject from 'is-plain-obj';
 
 const runBenchmarks = () => {
@@ -49,7 +50,8 @@ const values = [
 	new Proxy({}, {})
 ];
 
-// Warm up
-runLoop({});
+// Warm up V8 optimization.
+// Must go through every branch of the code, which requires using an object from a different realm.
+runLoop(runInNewContext('({})'));
 
 runBenchmarks();
