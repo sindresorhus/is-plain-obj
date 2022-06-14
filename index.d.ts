@@ -6,6 +6,7 @@ An object is plain if it's created by either `{}`, `new Object()`, or `Object.cr
 @example
 ```
 import isPlainObject from 'is-plain-obj';
+import {runInNewContext} from 'vm';
 
 isPlainObject({foo: 'bar'});
 //=> true
@@ -14,6 +15,10 @@ isPlainObject(new Object());
 //=> true
 
 isPlainObject(Object.create(null));
+//=> true
+
+// This works across realms
+isPlainObject(runInNewContext('({})'));
 //=> true
 
 isPlainObject([1, 2, 3]);
