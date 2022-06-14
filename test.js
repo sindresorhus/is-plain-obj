@@ -29,6 +29,7 @@ test('main', t => {
 	t.false(isPlainObject(0));
 	t.false(isPlainObject(false));
 	t.false(isPlainObject(new ObjectConstructor()));
+	t.false(isPlainObject(Object.create({})));
 
 	(function () {
 		t.false(isPlainObject(arguments)); // eslint-disable-line prefer-rest-params
