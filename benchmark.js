@@ -1,5 +1,5 @@
-import isPlainObj from 'is-plain-obj';
-import {inspect} from 'util';
+import {inspect} from 'node:util';
+import isPlainObject from 'is-plain-obj';
 
 const runBenchmarks = function () {
 	for (const value of values) {
@@ -44,8 +44,8 @@ const values = [
 ];
 
 const runLoop = function (value) {
-	for (let i = 0; i < 1e8; i += 1) {
-		isPlainObj(value);
+	for (let index = 0; index < 1e8; index += 1) {
+		isPlainObject(value);
 	}
 };
 
