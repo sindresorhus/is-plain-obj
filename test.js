@@ -1,6 +1,6 @@
+import {runInNewContext} from 'node:vm';
 import test from 'ava';
 import isPlainObject from './index.js';
-import {runInNewContext} from 'vm';
 
 function Foo(x) {
 	this.x = x;

@@ -6,7 +6,7 @@ An object is plain if it's created by either `{}`, `new Object()`, or `Object.cr
 @example
 ```
 import isPlainObject from 'is-plain-obj';
-import {runInNewContext} from 'vm';
+import {runInNewContext} from 'node:vm';
 
 isPlainObject({foo: 'bar'});
 //=> true

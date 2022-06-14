@@ -14,7 +14,7 @@ $ npm install is-plain-obj
 
 ```js
 import isPlainObject from 'is-plain-obj';
-import {runInNewContext} from 'vm';
+import {runInNewContext} from 'node:vm';
 
 isPlainObject({foo: 'bar'});
 //=> true
