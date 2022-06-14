@@ -1,13 +1,19 @@
 import {inspect} from 'node:util';
 import isPlainObject from 'is-plain-obj';
 
-const runBenchmarks = function () {
+const runBenchmarks = () => {
 	for (const value of values) {
 		const name = value instanceof Error ? String(Error) : inspect(value);
 		const paddedName = name.padEnd(50);
 		console.time(paddedName);
 		runLoop(value);
 		console.timeEnd(paddedName);
+	}
+};
+
+const runLoop = value => {
+	for (let index = 0; index < 1e8; index += 1) {
+		isPlainObject(value);
 	}
 };
 
@@ -42,12 +48,6 @@ const values = [
 	})(),
 	new Proxy({}, {})
 ];
-
-const runLoop = function (value) {
-	for (let index = 0; index < 1e8; index += 1) {
-		isPlainObject(value);
-	}
-};
 
 // Warm up
 runLoop({});
