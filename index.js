@@ -1,8 +1,8 @@
 export default function isPlainObject(value) {
-	if (Object.prototype.toString.call(value) !== '[object Object]') {
+	if (typeof value !== 'object' || value === null) {
 		return false;
 	}
 
 	const prototype = Object.getPrototypeOf(value);
-	return prototype === null || Object.getPrototypeOf(prototype) === null;
+	return (prototype === null || prototype === Object.prototype || Object.getPrototypeOf(prototype) === null) && !(Symbol.toStringTag in value) && !(Symbol.iterator in value);
 }
