@@ -27,7 +27,7 @@ const values = [
 	Symbol(''),
 	() => {},
 	// eslint-disable-next-line func-names
-	(function namedFunc() {}),
+	(function namedFunction() {}),
 	null,
 	{},
 	Math,
@@ -36,7 +36,6 @@ const values = [
 	Promise.resolve(),
 	Object.create(null),
 	new Intl.Locale('en'),
-	// eslint-disable-next-line no-new-object
 	new Object({prop: true}),
 	new class Class {}(),
 	[],
@@ -47,7 +46,7 @@ const values = [
 		// eslint-disable-next-line prefer-rest-params
 		return arguments;
 	})(),
-	new Proxy({}, {})
+	new Proxy({}, {}),
 ];
 
 // Warm up V8 optimization.
